@@ -1,11 +1,4 @@
-Failure in inter-shard back transfer payments, i.e. when callee SC (shard X) sends back payments to its caller SC (shard Y). **Callee is not refunded if back transfer payments failed to be sent to the caller**.
-
-Scenario | Transaction status | Comments
---|--|--
-SC A (shard 0, non-payable) calls SC B (shard 0) with async v1. SC B sends back 1 EGLD and 1 ESDT | Transaction success | EGLD sent and received, ESDT sent and received
-SC A (shard 0, non-payable) calls SC B (shard 0) with async v2. SC B sends back 1 EGLD and 1 ESDT | Transaction success | EGLD sent and received, ESDT sent and received
-SC A (shard 0, non-payable) calls SC B (shard 1) with async v1. SC B sends back 1 EGLD and 1 ESDT | Transaction failure: "sending value to non payable contract" | EGLD sent but not received, ESDT sent and received
-SC A (shard 0, non-payable) calls SC B (shard 1) with async v2. SC B sends back 1 EGLD and 1 ESDT | Transaction success | EGLD sent but not received, ESDT sent but not received and an uncompleted async v2 storage remains
+When a callee SC sends back payments to its caller, a non-payable SC in a different shard, then only the last payment will be successfully sent. Moreover, if the callee sends back more than 1 payment, then the transaction will fail with the error: "sending value to non payable contract". Note that this occurs whether the transaction is async v1 or v2.
 
 # How to reproduce
 
