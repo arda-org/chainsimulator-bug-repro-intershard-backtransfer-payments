@@ -18,8 +18,8 @@ multiversx_sc_wasm_adapter::endpoints! {
     contract
     (
         init => init
-        send_back_from_sc_async_v1 => send_back_from_sc_async_v1
-        send_back_from_sc_async_v2 => send_back_from_sc_async_v2
+        call_send_back_async_v1 => call_send_back_async_v1
+        call_send_back_async_v2 => call_send_back_async_v2
         send_back => send_back
     )
 }

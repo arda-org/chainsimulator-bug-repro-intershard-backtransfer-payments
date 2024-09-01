@@ -17,7 +17,7 @@ pub trait Contract {
 
     /// SC A
     #[endpoint]
-    fn send_back_from_sc_async_v1(
+    fn call_send_back_async_v1(
         &self,
         address: ManagedAddress,
         payments: ManagedVec<Payment<Self::Api>>,
@@ -28,8 +28,9 @@ pub trait Contract {
             .argument(&payments)
             .async_call_and_exit()
     }
+
     #[endpoint]
-    fn send_back_from_sc_async_v2(
+    fn call_send_back_async_v2(
         &self,
         address: ManagedAddress,
         payments: ManagedVec<Payment<Self::Api>>,
