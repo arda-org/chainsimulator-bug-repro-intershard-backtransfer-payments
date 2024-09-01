@@ -1,4 +1,6 @@
-When a callee SC sends back payments to its caller, a non-payable SC in a different shard, then only the last payment will be successfully sent. Moreover, if the callee sends back more than 1 payment, then the transaction will fail with the error: "sending value to non payable contract". Note that this occurs whether the transaction is async v1 or v2.
+If an SC A calls an SC B in another shard and SC B sends back tokens to SC A, then:
+- it succeeds when SC B sends back only 1 token (e.g. EGLD, fungible token, ...),
+- it fails when SC B sends back 2 tokens or more. The error: "sending value to non payable contract".
 
 # How to reproduce
 
@@ -8,4 +10,27 @@ npm install
 npm run build
 
 npm run test
+```
+
+# Tests (success / failure)
+
+```
+✓ SC A calls SC B, different shards, async v1. SC B sends back EGLD
+✓ SC A calls SC B, different shards, async v1. SC B sends back FFT
+✓ SC A calls SC B, different shards, async v1. SC B sends back SFT
+× SC A calls SC B, different shards, async v1. SC B sends back EGLD+FFT
+× SC A calls SC B, different shards, async v1. SC B sends back EGLD+SFT
+× SC A calls SC B, different shards, async v1. SC B sends back FFT+EGLD
+× SC A calls SC B, different shards, async v1. SC B sends back FFT+SFT
+× SC A calls SC B, different shards, async v1. SC B sends back SFT+EGLD
+× SC A calls SC B, different shards, async v1. SC B sends back SFT+FFT
+✓ SC A calls SC B, different shards, async v2. SC B sends back EGLD
+✓ SC A calls SC B, different shards, async v2. SC B sends back FFT
+✓ SC A calls SC B, different shards, async v2. SC B sends back SFT
+× SC A calls SC B, different shards, async v2. SC B sends back EGLD+FFT
+× SC A calls SC B, different shards, async v2. SC B sends back EGLD+SFT
+× SC A calls SC B, different shards, async v2. SC B sends back FFT+EGLD
+× SC A calls SC B, different shards, async v2. SC B sends back FFT+SFT
+× SC A calls SC B, different shards, async v2. SC B sends back SFT+EGLD
+× SC A calls SC B, different shards, async v2. SC B sends back SFT+FFT
 ```
