@@ -86,7 +86,7 @@ test("SC A calls SC B, different shards, async v1. SC B sends back SFT", async (
 	});
 });
 
-test("🔴 SC A calls SC B, different shards, async v1. SC B sends back EGLD+FFT", async () => {
+test("SC A calls SC B, different shards, async v1. SC B sends back EGLD+FFT", async () => {
 	using world = await FSWorld.start();
 
 	const { wallet, contractA, contractB } = await createAccounts(world);
@@ -103,10 +103,6 @@ test("🔴 SC A calls SC B, different shards, async v1. SC B sends back EGLD+FFT
 				),
 			],
 			gasLimit: 100_000_000,
-		})
-		.assertFail({
-			code: "returnMessage",
-			message: "sending value to non payable contract",
 		});
 
 	assertAccount(await contractB.getAccount(), {
@@ -124,7 +120,7 @@ test("🔴 SC A calls SC B, different shards, async v1. SC B sends back EGLD+FFT
 	});
 });
 
-test("🔴 SC A calls SC B, different shards, async v1. SC B sends back EGLD+SFT", async () => {
+test("SC A calls SC B, different shards, async v1. SC B sends back EGLD+SFT", async () => {
 	using world = await FSWorld.start();
 
 	const { wallet, contractA, contractB } = await createAccounts(world);
@@ -141,10 +137,6 @@ test("🔴 SC A calls SC B, different shards, async v1. SC B sends back EGLD+SFT
 				),
 			],
 			gasLimit: 100_000_000,
-		})
-		.assertFail({
-			code: "returnMessage",
-			message: "sending value to non payable contract",
 		});
 
 	assertAccount(await contractB.getAccount(), {
@@ -162,7 +154,7 @@ test("🔴 SC A calls SC B, different shards, async v1. SC B sends back EGLD+SFT
 	});
 });
 
-test("🔴 SC A calls SC B, different shards, async v1. SC B sends back FFT+EGLD", async () => {
+test("SC A calls SC B, different shards, async v1. SC B sends back FFT+EGLD", async () => {
 	using world = await FSWorld.start();
 
 	const { wallet, contractA, contractB } = await createAccounts(world);
@@ -179,10 +171,6 @@ test("🔴 SC A calls SC B, different shards, async v1. SC B sends back FFT+EGLD
 				),
 			],
 			gasLimit: 100_000_000,
-		})
-		.assertFail({
-			code: "returnMessage",
-			message: "sending value to non payable contract",
 		});
 
 	assertAccount(await contractB.getAccount(), {
@@ -200,7 +188,7 @@ test("🔴 SC A calls SC B, different shards, async v1. SC B sends back FFT+EGLD
 	});
 });
 
-test("🔴 SC A calls SC B, different shards, async v1. SC B sends back FFT+SFT", async () => {
+test("SC A calls SC B, different shards, async v1. SC B sends back FFT+SFT", async () => {
 	using world = await FSWorld.start();
 
 	const { wallet, contractA, contractB } = await createAccounts(world);
@@ -217,10 +205,6 @@ test("🔴 SC A calls SC B, different shards, async v1. SC B sends back FFT+SFT"
 				),
 			],
 			gasLimit: 100_000_000,
-		})
-		.assertFail({
-			code: "returnMessage",
-			message: "sending value to non payable contract",
 		});
 
 	assertAccount(await contractB.getAccount(), {
@@ -236,7 +220,7 @@ test("🔴 SC A calls SC B, different shards, async v1. SC B sends back FFT+SFT"
 	});
 });
 
-test("🔴 SC A calls SC B, different shards, async v1. SC B sends back SFT+EGLD", async () => {
+test("SC A calls SC B, different shards, async v1. SC B sends back SFT+EGLD", async () => {
 	using world = await FSWorld.start();
 
 	const { wallet, contractA, contractB } = await createAccounts(world);
@@ -253,10 +237,6 @@ test("🔴 SC A calls SC B, different shards, async v1. SC B sends back SFT+EGLD
 				),
 			],
 			gasLimit: 100_000_000,
-		})
-		.assertFail({
-			code: "returnMessage",
-			message: "sending value to non payable contract",
 		});
 
 	assertAccount(await contractB.getAccount(), {
@@ -274,7 +254,7 @@ test("🔴 SC A calls SC B, different shards, async v1. SC B sends back SFT+EGLD
 	});
 });
 
-test("🔴 SC A calls SC B, different shards, async v1. SC B sends back SFT+FFT", async () => {
+test("SC A calls SC B, different shards, async v1. SC B sends back SFT+FFT", async () => {
 	using world = await FSWorld.start();
 
 	const { wallet, contractA, contractB } = await createAccounts(world);
@@ -291,10 +271,6 @@ test("🔴 SC A calls SC B, different shards, async v1. SC B sends back SFT+FFT"
 				),
 			],
 			gasLimit: 100_000_000,
-		})
-		.assertFail({
-			code: "returnMessage",
-			message: "sending value to non payable contract",
 		});
 
 	assertAccount(await contractB.getAccount(), {
@@ -392,7 +368,7 @@ test("SC A calls SC B, different shards, async v2. SC B sends back SFT", async (
 	});
 });
 
-test("🔴 SC A calls SC B, different shards, async v2. SC B sends back EGLD+FFT", async () => {
+test("SC A calls SC B, different shards, async v2. SC B sends back EGLD+FFT", async () => {
 	using world = await FSWorld.start();
 
 	const { wallet, contractA, contractB } = await createAccounts(world);
@@ -410,10 +386,6 @@ test("🔴 SC A calls SC B, different shards, async v2. SC B sends back EGLD+FFT
 				e.U64(10_000_000),
 			],
 			gasLimit: 100_000_000,
-		})
-		.assertFail({
-			code: "returnMessage",
-			message: "sending value to non payable contract",
 		});
 
 	assertAccount(await contractB.getAccount(), {
@@ -431,7 +403,7 @@ test("🔴 SC A calls SC B, different shards, async v2. SC B sends back EGLD+FFT
 	});
 });
 
-test("🔴 SC A calls SC B, different shards, async v2. SC B sends back EGLD+SFT", async () => {
+test("SC A calls SC B, different shards, async v2. SC B sends back EGLD+SFT", async () => {
 	using world = await FSWorld.start();
 
 	const { wallet, contractA, contractB } = await createAccounts(world);
@@ -449,10 +421,6 @@ test("🔴 SC A calls SC B, different shards, async v2. SC B sends back EGLD+SFT
 				e.U64(10_000_000),
 			],
 			gasLimit: 100_000_000,
-		})
-		.assertFail({
-			code: "returnMessage",
-			message: "sending value to non payable contract",
 		});
 
 	assertAccount(await contractB.getAccount(), {
@@ -470,7 +438,7 @@ test("🔴 SC A calls SC B, different shards, async v2. SC B sends back EGLD+SFT
 	});
 });
 
-test("🔴 SC A calls SC B, different shards, async v2. SC B sends back FFT+EGLD", async () => {
+test("SC A calls SC B, different shards, async v2. SC B sends back FFT+EGLD", async () => {
 	using world = await FSWorld.start();
 
 	const { wallet, contractA, contractB } = await createAccounts(world);
@@ -488,10 +456,6 @@ test("🔴 SC A calls SC B, different shards, async v2. SC B sends back FFT+EGLD
 				e.U64(10_000_000),
 			],
 			gasLimit: 100_000_000,
-		})
-		.assertFail({
-			code: "returnMessage",
-			message: "sending value to non payable contract",
 		});
 
 	assertAccount(await contractB.getAccount(), {
@@ -508,7 +472,7 @@ test("🔴 SC A calls SC B, different shards, async v2. SC B sends back FFT+EGLD
 		kvs: { esdts: [{ id: tokenId, amount: 0 }] },
 	});
 });
-test("🔴 SC A calls SC B, different shards, async v2. SC B sends back FFT+SFT", async () => {
+test("SC A calls SC B, different shards, async v2. SC B sends back FFT+SFT", async () => {
 	using world = await FSWorld.start();
 
 	const { wallet, contractA, contractB } = await createAccounts(world);
@@ -526,10 +490,6 @@ test("🔴 SC A calls SC B, different shards, async v2. SC B sends back FFT+SFT"
 				e.U64(10_000_000),
 			],
 			gasLimit: 100_000_000,
-		})
-		.assertFail({
-			code: "returnMessage",
-			message: "sending value to non payable contract",
 		});
 
 	assertAccount(await contractB.getAccount(), {
@@ -545,7 +505,7 @@ test("🔴 SC A calls SC B, different shards, async v2. SC B sends back FFT+SFT"
 	});
 });
 
-test("🔴 SC A calls SC B, different shards, async v2. SC B sends back SFT+EGLD", async () => {
+test("SC A calls SC B, different shards, async v2. SC B sends back SFT+EGLD", async () => {
 	using world = await FSWorld.start();
 
 	const { wallet, contractA, contractB } = await createAccounts(world);
@@ -563,10 +523,6 @@ test("🔴 SC A calls SC B, different shards, async v2. SC B sends back SFT+EGLD
 				e.U64(10_000_000),
 			],
 			gasLimit: 100_000_000,
-		})
-		.assertFail({
-			code: "returnMessage",
-			message: "sending value to non payable contract",
 		});
 
 	assertAccount(await contractB.getAccount(), {
@@ -584,7 +540,7 @@ test("🔴 SC A calls SC B, different shards, async v2. SC B sends back SFT+EGLD
 	});
 });
 
-test("🔴 SC A calls SC B, different shards, async v2. SC B sends back SFT+FFT", async () => {
+test("SC A calls SC B, different shards, async v2. SC B sends back SFT+FFT", async () => {
 	using world = await FSWorld.start();
 
 	const { wallet, contractA, contractB } = await createAccounts(world);
@@ -602,10 +558,6 @@ test("🔴 SC A calls SC B, different shards, async v2. SC B sends back SFT+FFT"
 				e.U64(10_000_000),
 			],
 			gasLimit: 100_000_000,
-		})
-		.assertFail({
-			code: "returnMessage",
-			message: "sending value to non payable contract",
 		});
 
 	assertAccount(await contractB.getAccount(), {
