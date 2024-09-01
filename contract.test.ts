@@ -652,11 +652,6 @@ const createAccounts = async (
 			],
 		},
 	});
-	await world.setAccount({
-		address: "erd1lllllllllllllllllllllllllllllllllllllllllllllllllllsckry7t",
-		kvs: {
-			esdts: [{ id: tokenId, nonce: 1, amount: 1 }],
-		},
-	});
+	await world.sysAcc.addEsdts([{ id: tokenId, nonce: 1, amount: 1 }]);
 	return { wallet, contractA, contractB };
 };
